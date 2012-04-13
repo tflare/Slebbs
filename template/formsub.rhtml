@@ -1,0 +1,23 @@
+<%# $Id: formsub.rhtml 134 2005-04-14 11:17:56Z taki $ %>
+<%
+  if  SleBbs::Config[:session]
+    @cgi ||= CGI.new
+
+    session = CGI::Session.new(@cgi, "session_key" => "SleBbs")
+    name = session['name'] or ''
+    mail = session['mail'] or ''
+
+    session.close
+  else
+    name = ''
+    mail = ''
+  end
+%>
+    <div class="field name">name:<input type="text" name="name" size="25" value="<%= name %>"></div>
+    <div class="field mail">mail:<input type="text" name="mail" size="35" value="<%= mail %>"></div>
+    <% if SleBbs::Config[:session] %><div class="field cbox">name, mailを記憶する<input type="checkbox" name="save_cookie" value="on" checked></div><% end %>
+    <div class="textarea"><textarea name="text" cols="90" rows="10" wrap="hard"></textarea></div>
+    <div class="button"><input type="submit" name="<%= File::basename(@dbpath, SleBbs::Config[:dbextname]) if @dbpath != nil %>" value="Submit"></div>
+  </form>
+</div>
+<hr size="10">

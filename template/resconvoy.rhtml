@@ -1,0 +1,12 @@
+<%# $Id: resconvoy.rhtml 134 2005-04-14 11:17:56Z taki $ %>
+<div align="right">
+<a href="<%= SleBbs::Config[:indexpath] %>?act=view&amp;thread_id=<%= File::basename(@dbpath, SleBbs::Config[:dbextname]) %>&amp;res_id=All">[All]</a>
+<a href="<%= SleBbs::Config[:indexpath] %>?act=view&amp;thread_id=<%= File::basename(@dbpath, SleBbs::Config[:dbextname]) %>&amp;res_id=%7C50">[Last50]</a>
+<% tagetnum = 100
+ (end_line(@dbpath) / tagetnum).times do |count|
+target = "#{count * tagetnum + 1}-#{(count + 1) * tagetnum}" %>
+<a href="<%= SleBbs::Config[:indexpath] %>?act=view&amp;thread_id=<%= File::basename(@dbpath, SleBbs::Config[:dbextname]) %>&amp;res_id=<%= target %>">[<%= target %>]</a>
+<% end %>
+<a href="<%= SleBbs::Config[:indexpath] %>">[List]</a>
+</div><hr>
+

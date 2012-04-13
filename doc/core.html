@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+  <link rel="stylesheet" type="text/css" href="../theme/template/template.css">
+  <link rel="stylesheet" type="text/css" href="../theme/basic/basic.css">
+  <title>SleBbs doc index</title>
+</head>
+<body>
+<h1>SleBbs core</h1>
+<h2>SleBbsの実装の細かい話</h2>
+
+<h3>レス番号</h3>
+<p>
+SleBbsではレスファイルにレス番号を保存していない<br>
+入れなくてもできるんじゃないのと思ったからだ。<br>
+確かにできたのだがResreadクラスとResHtmlクラスが複雑になってしまった。<br>
+レス番号を表示する必要がある場合はレス番号を保存しといたほうが楽ができる。
+</p>
+
+<h3>SleBbs モジュール</h3>
+<p>
+明らかにSleBbsモジュールに入れたほうがよいものでも今は入っていない。<br>
+libの中にもSleBbsモジュールに入れたほうがよいものとplugin扱いにしたほうがよいものに分かれると思う。<br>
+要改善<br>
+</p>
+
+<h3>ログの記録</h3>
+<p>
+現在は1スレッド1ファイルにしてしているのだが、<br>
+ツリー式掲示板としても扱えるようにしようと考えていたら、今の仕様だと厳しい事がわかった。<br>
+スレッド式の場合スレッド数は抑えられるのが一般的だけど<br>
+ツリー式の場合、ツリーのレス数が少なくツリーの数が多くなるのが一般的だ。<br>
+1ツリーごとに1ファイル作っていたら管理が大変になると思われるので、<br>
+次のバージョンでは今の仕組みを変えるつもりだ。
+</p>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<%# $Id: newthread.rhtml 134 2005-04-14 11:17:56Z taki $ %>
+<hr>
+<div align ="center">
+<% if SleBbs::Config[:new_thread] and SleBbs::Config[:max_thread] > Dir.glob("#{SleBbs::Config[:dbpath]}/*#{SleBbs::Config[:dbextname]}").size %>
+<a href="<%= SleBbs::Config[:indexpath] %>?act=thread">新規スレッドの作成</a>
+<% else %>
+現在スレッドの作成は禁止されています。
+<% end %>
+  <div class="form">
+    <form method="post" action="<%= SleBbs::Config[:indexpath] %>">
+      <input type="hidden" name="act" value="search">
+    <div><input type="text" name="string" size=40 value="">&nbsp;&nbsp;<input type="submit" name="serach" value="検索"></div>
+    </form>
+  </div>
+</div>

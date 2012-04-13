@@ -1,0 +1,71 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+  <link rel="stylesheet" type="text/css" href="../theme/template/template.css">
+  <link rel="stylesheet" type="text/css" href="../theme/basic/basic.css">
+  <title>SleBbs 機能概説</title>
+</head>
+<body>
+
+<h1>機能概説</h1>
+<h2>機能</h2>
+<p>
+機能の一部を紹介します。<br>
+<a href="#auth">認証機能</a>/
+<a href="#autolink">自動リンク機能</a>/<a href="#trip">トリップ機能</a>/
+<a href="#markup">独自マークアップ</a>/<a href="#isbn2link">Isbn2link</a>/
+</p>
+<h3><a name="auth" id="auth">認証機能</a></h3>
+管理ページには認証がかかっています。認証を無効にすることもできます。<br>
+sleconfig.rbのauthの項を参考にしてください。<br>
+初期設定はuser:test pass:testです。<br>
+
+<h3><a name="autolink" id="autolink">自動リンク機能</a></h3>
+<p>
+http://,https:// から始まる文字列は自動的にリンクされます。
+</p>
+<h3>レス指定表示機能</h3>
+<p>
+  * 5　　5レス目を表示<br>
+  * 1-5　1から5レス目まで表示<br>
+  *  -5　 同上<br>
+  * 5-1　同上<br>
+  * |10　最後から10レス表示<br>
+上記のように指定できます。<br>
+</p>
+<h3><a name="trip" id="trip">トリップ機能</a></h3>
+<p>
+name欄に [名前#キー] と書くと [名前◆ユニーク文字列]に変換されます。<br>
+トリップは名前とキーから算出されます。<br>
+どちらかが一字でも異なれば違うユニーク文字列となります。<br>
+</p>
+<h3><a name="markup" id="markup">独自マークアップ</a></h3>
+<p>
++{},++{},-{},--{}が利用できます。<br>
+* 独自マークアップ例<br>
+  * +{foo}だとfooが一段階大きく-{foo}だとfooが一段階小さくなります。<br>
+  * ++{foo}だとfooが二段階大きく--{foo}だとfooが二段階小さくなります。<br>
+</p>
+<p>
+template/header.rhtmlで定義されており<br>
+span.plus<br>
+span.plusplus<br>
+span.minus<br>
+span.minusminus<br>
+を定義しなおせば表示方法を変えることもできます。
+</p>
+
+<h3><a name="isbn2link" id="isbn2link">Isbn2link</a></h3>
+<p>
+ISBNをアマゾンへのリンクに変換します。
+</p>
+<p>
+[書式例]<br>
+ISBN:400099997X<br>
+ISBN:4-000-99998-1 と'-'が入っていても可<br>
+ISBN: 4-000-99998-1 :と数字の間にスペースが入っても可<br>
+ISBN4-000-99999-5 と':'がなくても可<br>
+</p>
+
+</body>
+</html>

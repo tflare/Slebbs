@@ -1,0 +1,6 @@
+<%# $Id: resform.rhtml 134 2005-04-14 11:17:56Z taki $ %>
+<div class="form">
+  <form method="post" action="<%= SleBbs::Config[:indexpath] %>">
+    <input type="hidden" name="act" value="res">
+    <input type="hidden" name="thread_id" value="<%= File::basename(@dbpath, SleBbs::Config[:dbextname]) %>">
+    <div class="caption">■ 返信フォーム ■</div>

@@ -1,0 +1,11 @@
+<%# $Id: top.rhtml 134 2005-04-14 11:17:56Z taki $ %>
+<p>SleBbs概要</p>
+<ul>
+<li>SleBbsは返信によってスレッドが浮き沈みする掲示板です。</li>
+<li>各スレッドの一番下にあるフォームから投稿することができます。</li>
+<li>スレッドの最大レス数は<%= SleBbs::Config[:max_res] %>件です。</li>
+</ul>
+<table class="list">
+<tr>
+<th class="list">No</th><th class="list">スレッドタイトル</th><th class="list">投稿者名</th><th class="list">レス</th><th class="list">最終投稿日</th>
+</tr>

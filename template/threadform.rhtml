@@ -1,0 +1,6 @@
+<%# $Id: threadform.rhtml 134 2005-04-14 11:17:56Z taki $ %>
+<div class="form">
+  <form method="post" name="make_thread" action="<%= SleBbs::Config[:indexpath] %>">
+    <input type="hidden" name="act" value="make_thread">
+    <div class="caption">スレッドの作成</div>
+    <div class="title">title:<input type="text" name="title" size="65"></div>
